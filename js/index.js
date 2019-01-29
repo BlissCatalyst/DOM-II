@@ -27,3 +27,24 @@ fun.forEach(fun => {
         e.target.style.cssText = "color: black; background-color: white";
     });
 });
+
+// Fun Bus logo rotates as you spin the mousewheel.
+const rotateLogo = document.querySelector('.logo-heading');
+let i = 0
+rotateLogo.addEventListener('wheel', e => {
+    e.target.style.cssText = `transform: rotate(${i}deg)`;
+    i += 15;
+});
+
+const keyPress = document.querySelectorAll('h2');
+keyPress.forEach(keyPress => {
+    keyPress.addEventListener('keydown', e => {
+        e.target.style.cssText = "color: green";
+    });
+});
+const keyUp = document.querySelectorAll('p');
+keyUp.forEach(keyUp => {
+    keyUp.addEventListener('keyup', e => {
+        e.target.style.cssText = "color: maroon";
+    });
+});
